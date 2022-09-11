@@ -22,13 +22,27 @@
         <i class="fa-solid fa-caret-down"></i>
       </div>
       <div class="dropdown-list">
-        <div class="dropdown-item">Framer</div>
+        <div class="dropdown-item" name="name" id="name-dropdown">Framer</div>
         <div class="dropdown-item">Sketch</div>
-        <div class="dropdown-item">Figma</div>
+        <div class="dropdown-item select">Figma</div>
         <div class="dropdown-item">AdobeXd</div>
         <div class="dropdown-item">Photoshop</div>
       </div>
     </div>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum aspernatur, ut id accusantium ea quasi, est corporis vitae aliquam quis fugit dolore maxime adipisci officia dolor, laborum atque eligendi officiis?</p>
 </body>
+<script>
+  // let ele = document.getElementsByClassName("dropdown-item");
+  // console.log(ele[0].getAttributeNode("target"));
+  const nodeList = document.querySelectorAll('.dropdown-item');
+  // console.log(nodeList);
+  for (const ele of nodeList) {
+    ele.addEventListener('click',function(e) {
+      console.log(typeof(e.target.className));
+      if(e.target.className == 'dropdown-item select') {
+        console.log(e.target);
+      }
+    });
+  }
+</script>
 </html>

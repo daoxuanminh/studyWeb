@@ -17,7 +17,8 @@ body{
     margin-top: 200px;
     border-radius: 100rem 100rem 0 0;
     position: relative;
-    animation: ghost 1.5s ease-in-out alternate infinite;
+    transform-origin: bottom left;
+    animation: ghost 1.5s infinite alternate;
  }
  .ghost::before{
     content: '';
@@ -79,11 +80,11 @@ body{
 
  @keyframes ghost {
     0% {
-        /* transform: rotate(-60deg); */
         transform: translateY(-80%);
+        /* transform: rotate(360deg) translateY(-80%); */
     }
     100% {  
-        /* transform: rotate(180deg); */
+        /* transform: rotate(calc(360deg * 2)); */
     }
  }
 

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/da3f2c352c.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            
+        }
+        #wrapper {
+            width: 100vw;
+            height: 100vh;
+            padding-top: 200px;
+            z-index: -1;
+            
+        }
+        /* body {
+            /* width: 100vw;
+            height: 100vh; 
+        } */
+
+        #chessboard {
+            /* scale: 2; */
+            width: 160px;
+            height: 160px;
+            /* display: inline-block; */
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            /* border: 1px solid blue; */
+            border: 4px solid;
+            border-image-slice: 1;
+            border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+        }
+
+        .row {
+            /* background-color: black; */
+            display: flex;
+            width: 100%;
+            height: 20px;
+        }
+
+        .white {
+            background-color: rgba(211, 197, 197, 0);
+            background-color: #F0E68C;
+            background-color: transparent;
+            margin-left: 0;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            /* display: inline-block; */
+        }
+
+        .black {
+            cursor: pointer;
+            margin-left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(153, 92, 51, 0.842);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .team-black {
+            color: black;
+            /* box-shadow: 0 0 2px 2px black; */
+        }
+
+        .team-white {
+            color: rgb(255, 153, 0);
+        }
+
+        i {
+            cursor: pointer;
+            /* width: 20px;
+            height: 20px; */
+            box-sizing: border-box;
+            display: block;
+
+            padding: 2px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="chessboard">
+            <div class="row" id="row-1">
+                <div class="white"><i class="fa-solid team-black fa-chess-rook"></i></div>
+                <div class="black"><i class="fa-solid team-black fa-chess-knight"></i></div>
+                <div class="white"><i class="fa-solid team-black fa-chess-bishop"></i></div>
+                <div class="black"><i class="fa-solid team-black fa-chess-king"></i></div>
+                <div class="white"><i class="fa-solid team-black fa-chess-queen"></i></div>
+                <div class="black"><i class="fa-solid team-black fa-chess-bishop"></i></div>
+                <div class="white"><i class="fa-solid team-black fa-chess-knight"></i></div>
+                <div class="black"><i class="fa-solid team-black fa-chess-rook"></i></div>
+            </div>
+            <div class="row" id="row-2">
+                <div class="black"><i class="fa-solid team-black fa-chess-pawn"></i></div>
+                <div class="white"><i class="fa-solid team-black fa-chess-pawn"></i></div>
+                <div class="black"><i class="fa-solid team-black fa-chess-pawn"></i></div>
+                <div class="white"><i class="fa-solid team-black fa-chess-pawn"></i></div>
+                <div class="black"><i class="fa-solid team-black fa-chess-pawn"></i></div>
+                <div class="white"><i class="fa-solid team-black fa-chess-pawn"></i></div>
+                <div class="black"><i class="fa-solid team-black fa-chess-pawn"></i></div>
+                <div class="white"><i class="fa-solid team-black fa-chess-pawn"></i></div>
+            </div>
+            <div class="row" id="row-2">
+                <div class="white"></div>
+                <div class="black"></div>
+                <div class="white"></div>
+                <div class="black"></div>
+                <div class="white"></div>
+                <div class="black"></div>
+                <div class="white"></div>
+                <div class="black"></div>
+            </div>
+            <div class="row" id="row-4">
+                <div class="black"></div>
+                <div class="white"></div>
+                <div class="black"></div>
+                <div class="white"></div>
+                <div class="black"></div>
+                <div class="white"></div>
+                <div class="black"></div>
+                <div class="white"></div>
+            </div>
+            <div class="row" id="row-5">
+                <div class="white"></div>
+                <div class="black"></div>
+                <div class="white"></div>
+                <div class="black"></div>
+                <div class="white"></div>
+                <div class="black"></div>
+                <div class="white"></div>
+                <div class="black"></div>
+            </div>
+            <div class="row" id="row-6">
+                <div class="black"></div>
+                <div class="white"></div>
+                <div class="black"></div>
+                <div class="white"></div>
+                <div class="black"></div>
+                <div class="white"></div>
+                <div class="black"></div>
+                <div class="white"></div>
+            </div>
+            <div class="row" id="row-7">
+                <div class="white"><i class="fa-solid team-white fa-chess-pawn"></i></div>
+                <div class="black"><i class="fa-solid team-white fa-chess-pawn"></i></div>
+                <div class="white"><i class="fa-solid team-white fa-chess-pawn"></i></div>
+                <div class="black"><i class="fa-solid team-white fa-chess-pawn"></i></div>
+                <div class="white"><i class="fa-solid team-white fa-chess-pawn"></i></div>
+                <div class="black"><i class="fa-solid team-white fa-chess-pawn"></i></div>
+                <div class="white"><i class="fa-solid team-white fa-chess-pawn"></i></div>
+                <div class="black"><i class="fa-solid team-white fa-chess-pawn"></i></div>
+            </div>
+            <div class="row" id="row-8">
+                <div class="black"><i class="fa-solid team-white fa-chess-rook"></i></div>
+                <div class="white"><i class="fa-solid team-white fa-chess-knight"></i></div>
+                <div class="black"><i class="fa-solid team-white fa-chess-bishop"></i></div>
+                <div class="white"><i class="fa-solid team-white fa-chess-king"></i></div>
+                <div class="black"><i class="fa-solid team-white fa-chess-queen"></i></div>
+                <div class="white"><i class="fa-solid team-white fa-chess-bishop"></i></div>
+                <div class="black"><i class="fa-solid team-white fa-chess-knight"></i></div>
+                <div class="white"><span class="fa-solid team-white fa-chess-rook"></span></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="chess.js"></script>
+
+<!-- <script>
+    let turnBlack = 0;
+    let turnWhite = 0;
+    let chessMan = document.querySelectorAll('.row');
+    var select1 = '';
+    // var select2 = '';
+    for (const element of chessMan) {
+        var cm = document.createElement('span');
+        element.addEventListener('click', function (event) {
+            // console.log(event.target.matches('.fa-solid'));
+            if (event.target.matches('.fa-solid') && select1 === ''){
+                select1 = event.target;
+                for (const i of event.target.classList) {
+                    cm.classList.add(i);
+                }
+                console.log(select1);
+                console.log(event.target);
+            }else if (select1 != '' && event.target.matches('.black, .white') == false){
+                // select1 = '';
+                ;
+                console.log(select1);
+                console.log(event.target);
+            }else if (select1.matches('.team-black')  ){
+
+            }
+            else {
+                console.log(select1);
+                console.log(event.target);
+                // console.log(cm);
+                event.target.appendChild(cm);
+                cm = document.createElement('span');
+                select1 = '';
+            }
+            removeEle(select1);
+            
+        });
+    };
+    function removeEle (){
+        select1.remove('i');
+    }
+</script> -->
+
+</html>
